@@ -29,5 +29,6 @@ Before IIT, Moe was a member of R&D department at [Sobh Parlar Industrial Co](ht
 7. [Towards Sound-source Position Estimation using Mutual Information for Next Best View Motion Planning](https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:Y0pCki6q_DkC)
 
 ## LinkedIn Profile
+<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>
 
 <div class="badge-base LI-profile-badge" data-locale="en_US" data-size="large" data-theme="light" data-type="HORIZONTAL" data-vanity="moe-sani" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://uk.linkedin.com/in/moe-sani?trk=profile-badge">Moe Sani</a></div>
