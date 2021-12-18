@@ -1,6 +1,6 @@
 # Mohammad Fattahi Sani (Moe Sani)
 
-<img height="200" src="/Users/msani/pv_src/website/moe.jpg" width="200"/>
+<img height="200" src="https://github.com/moe-sani/website/blob/master/moe.jpg?raw=true" width="200"/>
 
 Moe is currently a Senior Embedded Software Engineer working in the New Product Innovation (NPI) Software Team at [Dyson](http://dyson.co.uk). He has been actively involved in a number of critical innovative projects that includes prototyping .
 As a member of NST team, he is responsible for ensuring the next generation of connected products and technologies are properly explored, tested and refined in readiness to transition to the delivery teams. This includes ensuring investigating and utilising the right technologies, techniques, services and security. Core to this is exploring the proposition and technology by developing proof of concept integrations and systems.
