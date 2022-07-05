@@ -2,13 +2,14 @@
 
 <img height="200" src="https://github.com/moe-sani/website/blob/master/moe.jpg?raw=true" width="200"/>
 
-Moe is currently a Senior Embedded Software Engineer working in the New Product Innovation (NPI) Software Team at [Dyson](http://dyson.co.uk). He has been actively involved in a number of critical innovative projects that includes prototyping .
+Moe is currently a Lead Embedded Software Engineer working in the New Product Innovation (NPI) Software Team at [Dyson](http://dyson.co.uk). He has been actively involved in various stages of number of new products at Dyson.
 As a member of NST team, he is responsible for ensuring the next generation of connected products and technologies are properly explored, tested and refined in readiness to transition to the delivery teams. This includes ensuring investigating and utilising the right technologies, techniques, services and security. Core to this is exploring the proposition and technology by developing proof of concept integrations and systems.
 Some key technologies include:
 * IoT/Connected Systems
 * Embedded Linux systems
 * Bluetooth Low Energy
 
+Moe has also been serving as Industrial Mentor for Dyson Inistitute of Technology (DIET) as well as University of Bristol students since 2020.
 
 Prior to Dyson, Moe was a Research Associate at Bristol Robotics Laboratory (BRL), working on [SMARTsurg](https://smartsurg-project.eu) European project to build a more intuitive teleoperated surgical robot. During his research at BRL, he contributed to different aspects of the project including hand tracking, teleoperation, virtual reality and haptic feedback.
 
