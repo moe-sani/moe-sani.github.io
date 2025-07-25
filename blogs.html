@@ -372,3 +372,109 @@
                 } else if (line && !line.startsWith('#') && currentSection === 'excerpt') {
                     blog.excerpt += line + ' ';
                 } else if (contentStarted && line && !line.startsWith('##') && !blog.excerpt && currentSection !== 'excerpt') {
+                    // Use first paragraph as excerpt if no explicit excerpt is provided
+                    if (blog.excerpt.length < 150) {
+                        blog.excerpt += line + ' ';
+                    }
+                }
+            }
+
+            // Set default date if not provided
+            if (!blog.date) {
+                blog.date = new Date().toISOString().split('T')[0];
+            }
+
+            // Trim excerpt
+            blog.excerpt = blog.excerpt.trim().substring(0, 200) + '...';
+
+            return blog.title ? blog : null;
+        }
+
+        function displayBlogs(blogs) {
+            const container = document.getElementById('blogs-container');
+            container.innerHTML = `
+                <div class="blogs-grid">
+                    ${blogs.map(blog => `
+                        <div class="blog-card">
+                            <div class="blog-image">
+                                ${blog.image.startsWith('http') ? 
+                                    `<img src="${blog.image}" alt="${blog.title}" style="width: 100%; height: 100%; object-fit: cover;">` :
+                                    blog.image
+                                }
+                            </div>
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span class="blog-date">${formatDate(blog.date)}</span>
+                                    <span class="blog-category">${blog.category}</span>
+                                </div>
+                                <h3 class="blog-title">${blog.title}</h3>
+                                <p class="blog-excerpt">${blog.excerpt}</p>
+                                <div class="blog-tags">
+                                    ${blog.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                                </div>
+                                <a href="blog.html?post=${blog.id}" class="blog-link">Read More</a>
+                            </div>
+                        </div>
+                    `).join('')}
+                </div>
+            `;
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'long', 
+                day: 'numeric' 
+            });
+        }
+
+        function showDefaultBlogs() {
+            const defaultBlogs = [
+                {
+                    title: "Edge AI: The Future of IoT",
+                    excerpt: "Exploring how edge AI is revolutionizing IoT applications and reducing dependency on cloud computing for real-time decisions. From smart sensors to autonomous vehicles, edge computing is transforming how we process data...",
+                    date: "2025-01-15",
+                    category: "AI & Machine Learning",
+                    tags: ["Edge AI", "IoT", "Machine Learning", "Technology"],
+                    image: "🧠"
+                },
+                {
+                    title: "Robotics in Consumer Products",
+                    excerpt: "Insights from my experience at Dyson, discussing how robotics is transforming everyday household appliances. The integration of AI and robotics in consumer products is creating smarter, more efficient homes...",
+                    date: "2025-01-10",
+                    category: "Robotics",
+                    tags: ["Robotics", "Consumer Products", "Innovation", "Smart Home"],
+                    image: "🤖"
+                },
+                {
+                    title: "Machine Learning on Microcontrollers",
+                    excerpt: "Technical deep-dive into deploying ML models on resource-constrained devices for edge computing applications. Learn about optimization techniques, model compression, and real-world deployment strategies...",
+                    date: "2025-01-05",
+                    category: "Embedded Systems",
+                    tags: ["Machine Learning", "Microcontrollers", "Embedded Systems", "Optimization"],
+                    image: "⚡"
+                },
+                {
+                    title: "Advanced Teleoperation Systems",
+                    excerpt: "Exploring the latest developments in remote robotic control, from haptic feedback to low-latency communication protocols. How teleoperation is enabling robotics in hazardous environments...",
+                    date: "2024-12-28",
+                    category: "Robotics",
+                    tags: ["Teleoperation", "Remote Control", "Robotics", "Safety"],
+                    image: "🎮"
+                },
+                {
+                    title: "The Evolution of Embedded AI",
+                    excerpt: "From simple microcontrollers to AI-powered edge devices, this post traces the evolution of embedded artificial intelligence and its impact on various industries...",
+                    date: "2024-12-20",
+                    category: "AI & Machine Learning",
+                    tags: ["Embedded AI", "Evolution", "Technology", "Innovation"],
+                    image: "🔬"
+                }
+            ];
+
+            displayBlogs(defaultBlogs);
+        }
+
+        // Load blogs when page loads
+        document.addEventListener('DOMContentLoaded', loadBlogs);
