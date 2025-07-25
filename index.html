@@ -11,6 +11,37 @@
             box-sizing: border-box;
         }
 
+        /* Video Section */
+        .video-section {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .video-container {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-top: 2rem;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
@@ -193,11 +224,32 @@
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
         }
 
         .content-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .card-thumbnail {
+            width: 100%;
+            height: 150px;
+            background: linear-gradient(45deg, #3498db, #2980b9);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 2rem;
+            overflow: hidden;
+        }
+
+        .card-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
 
         .content-card h3 {
@@ -319,7 +371,6 @@
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#blogs">Blogs</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -375,16 +426,19 @@
             <h2 class="section-title">Projects</h2>
             <div class="content-grid">
                 <div class="content-card">
+                    <div class="card-thumbnail">🏥</div>
                     <h3>SMARTsurg Project</h3>
                     <p>Contributed to groundbreaking surgical robotics project at Bristol Robotics Laboratory, focusing on intelligent surgical assistance systems.</p>
                     <a href="https://smartsurg-project.eu/" class="card-link" target="_blank">Learn More →</a>
                 </div>
                 <div class="content-card">
+                    <div class="card-thumbnail">🤖</div>
                     <h3>Robot Teleoperativo</h3>
                     <p>Developed advanced teleoperation systems at Italian Institute of Technology for remote robotic control applications.</p>
                     <a href="https://advr.iit.it/projects/inail-scc/teleoperazione" class="card-link" target="_blank">View Project →</a>
                 </div>
                 <div class="content-card">
+                    <div class="card-thumbnail">🧠</div>
                     <h3>Edge AI Solutions</h3>
                     <p>Leading innovation in edge AI deployment, helping developers build intelligent IoT solutions with reduced latency and costs.</p>
                     <a href="#contact" class="card-link">Get In Touch →</a>
@@ -393,35 +447,6 @@
                     <div>
                         <h3 style="color: white; margin-bottom: 1rem;">View All Projects</h3>
                         <a href="projects.html" class="cta-button" style="color: #3498db; background: white;">See All →</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="blogs" class="section">
-        <div class="container">
-            <h2 class="section-title">Latest Blogs</h2>
-            <div class="content-grid">
-                <div class="content-card">
-                    <h3>Edge AI: The Future of IoT</h3>
-                    <p>Exploring how edge AI is revolutionizing IoT applications and reducing dependency on cloud computing for real-time decisions.</p>
-                    <a href="#" class="card-link">Read More →</a>
-                </div>
-                <div class="content-card">
-                    <h3>Robotics in Consumer Products</h3>
-                    <p>Insights from my experience at Dyson, discussing how robotics is transforming everyday household appliances.</p>
-                    <a href="#" class="card-link">Read More →</a>
-                </div>
-                <div class="content-card">
-                    <h3>Machine Learning on Microcontrollers</h3>
-                    <p>Technical deep-dive into deploying ML models on resource-constrained devices for edge computing applications.</p>
-                    <a href="#" class="card-link">Read More →</a>
-                </div>
-                <div class="content-card" style="background: #e74c3c; color: white; display: flex; align-items: center; justify-content: center; text-align: center;">
-                    <div>
-                        <h3 style="color: white; margin-bottom: 1rem;">Read All Blogs</h3>
-                        <a href="blogs.html" class="cta-button" style="color: #e74c3c; background: white;">View All →</a>
                     </div>
                 </div>
             </div>
@@ -452,6 +477,24 @@
                         <h3 style="color: white; margin-bottom: 1rem;">All Publications</h3>
                         <a href="publications.html" class="cta-button" style="color: #9b59b6; background: white;">See All →</a>
                     </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="video-section">
+        <div class="container">
+            <div class="video-container">
+                <h2 class="section-title" style="color: #2c3e50;">Featured Video</h2>
+                <p style="font-size: 1.1rem; color: #666; margin-bottom: 1rem;">Watch my latest insights on technology and innovation</p>
+                <div class="video-wrapper">
+                    <iframe src="https://www.youtube.com/embed/IfbeKr-B2ds?si=-SJVTxRQjKa-KJzp" 
+                            title="YouTube video player" 
+                            frameborder="0" 
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                            referrerpolicy="strict-origin-when-cross-origin" 
+                            allowfullscreen>
+                    </iframe>
                 </div>
             </div>
         </div>

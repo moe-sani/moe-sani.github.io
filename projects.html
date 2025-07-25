@@ -233,7 +233,6 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="index.html#about">About</a></li>
                 <li><a href="projects.html" class="active">Projects</a></li>
-                <li><a href="blogs.html">Blogs</a></li>
                 <li><a href="publications.html">Publications</a></li>
                 <li><a href="index.html#contact">Contact</a></li>
             </ul>
@@ -269,92 +268,23 @@
             navLinks.classList.toggle('active');
         }
 
-        // Load projects from markdown files
+        // Load projects from a simple projects list
         async function loadProjects() {
             const projectsContainer = document.getElementById('projects-container');
             
             try {
-                // Try to load projects from the projects folder
-                const projectFiles = [
-                    'smartsurg-project.md',
-                    'robot-teleoperativo.md',
-                    'edge-ai-solutions.md',
-                    'dyson-robotics.md',
-                    'iot-optimization.md'
-                ];
-
-                const projects = [];
-
-                for (const file of projectFiles) {
-                    try {
-                        const response = await fetch(`projects/${file}`);
-                        if (response.ok) {
-                            const content = await response.text();
-                            const project = parseMarkdown(content, file);
-                            if (project) projects.push(project);
-                        }
-                    } catch (error) {
-                        console.log(`Project file ${file} not found, skipping...`);
-                    }
-                }
-
-                // If no markdown files found, show default projects
-                if (projects.length === 0) {
-                    showDefaultProjects();
+                // Try to load projects index file
+                const response = await fetch('projects/index.json');
+                if (response.ok) {
+                    const projectsData = await response.json();
+                    displayProjects(projectsData.projects);
                 } else {
-                    displayProjects(projects);
+                    showDefaultProjects();
                 }
             } catch (error) {
                 console.error('Error loading projects:', error);
                 showDefaultProjects();
             }
-        }
-
-        function parseMarkdown(content, filename) {
-            const lines = content.split('\n');
-            const project = {
-                id: filename.replace('.md', ''),
-                title: '',
-                description: '',
-                tags: [],
-                links: [],
-                image: '🚀'
-            };
-
-            let currentSection = '';
-            
-            for (let line of lines) {
-                line = line.trim();
-                
-                if (line.startsWith('# ')) {
-                    project.title = line.substring(2);
-                } else if (line.startsWith('## Description')) {
-                    currentSection = 'description';
-                } else if (line.startsWith('## Tags')) {
-                    currentSection = 'tags';
-                } else if (line.startsWith('## Links')) {
-                    currentSection = 'links';
-                } else if (line.startsWith('## Image')) {
-                    currentSection = 'image';
-                } else if (line && !line.startsWith('#')) {
-                    if (currentSection === 'description') {
-                        project.description += line + ' ';
-                    } else if (currentSection === 'tags') {
-                        project.tags = line.split(',').map(tag => tag.trim());
-                    } else if (currentSection === 'links') {
-                        if (line.includes('](')) {
-                            const match = line.match(/\[([^\]]+)\]\(([^)]+)\)/);
-                            if (match) {
-                                project.links.push({ text: match[1], url: match[2] });
-                            }
-                        }
-                    } else if (currentSection === 'image') {
-                        project.image = line;
-                    }
-                }
-            }
-
-            return project.title ? project : null;
         }
 
         function displayProjects(projects) {
@@ -364,21 +294,20 @@
                     ${projects.map(project => `
                         <div class="project-card">
                             <div class="project-image">
-                                ${project.image.startsWith('http') ? 
-                                    `<img src="${project.image}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover;">` :
-                                    project.image
+                                ${project.thumbnail ? 
+                                    `<img src="${project.thumbnail}" alt="${project.title}" style="width: 100%; height: 100%; object-fit: cover;">` :
+                                    (project.icon || '🚀')
                                 }
                             </div>
                             <div class="project-content">
                                 <h3 class="project-title">${project.title}</h3>
                                 <p class="project-description">${project.description}</p>
                                 <div class="project-tags">
-                                    ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                                    ${project.tags ? project.tags.map(tag => `<span class="tag">${tag}</span>`).join('') : ''}
                                 </div>
                                 <div class="project-links">
-                                    ${project.links.map(link => `
-                                        <a href="${link.url}" class="project-link" target="_blank">${link.text}</a>
-                                    `).join('')}
+                                    ${project.page ? `<a href="projects/${project.page}" class="project-link">View Details</a>` : ''}
+                                    ${project.external_link ? `<a href="${project.external_link}" class="project-link" target="_blank">External Link</a>` : ''}
                                 </div>
                             </div>
                         </div>
@@ -393,36 +322,36 @@
                     title: "SMARTsurg Project",
                     description: "Contributed to groundbreaking surgical robotics project at Bristol Robotics Laboratory, focusing on intelligent surgical assistance systems and precision automation.",
                     tags: ["Robotics", "Healthcare", "AI", "Research"],
-                    links: [{ text: "View Project", url: "https://smartsurg-project.eu/" }],
-                    image: "🏥"
+                    external_link: "https://smartsurg-project.eu/",
+                    icon: "🏥"
                 },
                 {
                     title: "Robot Teleoperativo",
                     description: "Developed advanced teleoperation systems at Italian Institute of Technology for remote robotic control applications in hazardous environments.",
                     tags: ["Teleoperation", "Robotics", "Remote Control", "Safety"],
-                    links: [{ text: "Learn More", url: "https://advr.iit.it/projects/inail-scc/teleoperazione" }],
-                    image: "🤖"
+                    external_link: "https://advr.iit.it/projects/inail-scc/teleoperazione",
+                    icon: "🤖"
                 },
                 {
                     title: "Edge AI Solutions",
                     description: "Leading innovation in edge AI deployment at Edge Impulse, helping developers build intelligent IoT solutions with reduced latency and costs.",
                     tags: ["Edge AI", "IoT", "Machine Learning", "Optimization"],
-                    links: [{ text: "Contact Me", url: "index.html#contact" }],
-                    image: "🧠"
+                    external_link: "index.html#contact",
+                    icon: "🧠"
                 },
                 {
                     title: "Dyson Future Robotics",
                     description: "Served as Associate Principal Software Engineer driving innovation for Dyson's next generation of intelligent household robots.",
                     tags: ["Consumer Robotics", "Software Engineering", "Innovation", "Product Development"],
-                    links: [{ text: "Learn More", url: "https://dyson.co.uk" }],
-                    image: "🏠"
+                    external_link: "https://dyson.co.uk",
+                    icon: "🏠"
                 },
                 {
                     title: "Industrial IoT Optimization",
                     description: "Developed embedded systems and IoT solutions for industrial applications at Sobh Parlar Industrial Co, focusing on household appliances.",
                     tags: ["IoT", "Embedded Systems", "Industrial", "Product Development"],
-                    links: [{ text: "Company Info", url: "http://parlar.ir/en/" }],
-                    image: "⚙️"
+                    external_link: "http://parlar.ir/en/",
+                    icon: "⚙️"
                 }
             ];
 

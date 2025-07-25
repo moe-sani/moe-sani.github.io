@@ -1,0 +1,27 @@
+{
+    "projects": [
+        {
+            "title": "SMARTsurg Project",
+            "description": "Contributed to groundbreaking surgical robotics project at Bristol Robotics Laboratory, focusing on intelligent surgical assistance systems and precision automation.",
+            "tags": ["Robotics", "Healthcare", "AI", "Research"],
+            "thumbnail": "projects/smartsurg/thumbnail.jpg",
+            "page": "smartsurg/index.html",
+            "external_link": "https://smartsurg-project.eu/"
+        },
+        {
+            "title": "Robot Teleoperativo",
+            "description": "Developed advanced teleoperation systems at Italian Institute of Technology for remote robotic control applications in hazardous environments.",
+            "tags": ["Teleoperation", "Robotics", "Remote Control", "Safety"],
+            "icon": "🤖",
+            "page": "teleoperativo/index.html",
+            "external_link": "https://advr.iit.it/projects/inail-scc/teleoperazione"
+        },
+        {
+            "title": "Edge AI Solutions",
+            "description": "Leading innovation in edge AI deployment at Edge Impulse, helping developers build intelligent IoT solutions with reduced latency and costs.",
+            "tags": ["Edge AI", "IoT", "Machine Learning", "Optimization"],
+            "thumbnail": "projects/edge-ai/thumbnail.jpg",
+            "page": "edge-ai/index.html"
+        }
+    ]
+}
