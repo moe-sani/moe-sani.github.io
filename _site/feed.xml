@@ -1,4 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-02-18T18:45:25+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Moe Sani</title><subtitle>Visionary engineer and innovator specializing in robotics, embedded systems, and machine learning. Leading edge AI deployment and building intelligent systems for real-world impact.</subtitle><author><name>Mohammad Fattahi Sani</name></author><entry><title type="html">Welcome to the Lab Notes</title><link href="http://localhost:4000/blog/welcome-to-the-blog/" rel="alternate" type="text/html" title="Welcome to the Lab Notes" /><published>2026-02-18T00:00:00+00:00</published><updated>2026-02-18T00:00:00+00:00</updated><id>http://localhost:4000/blog/welcome-to-the-blog</id><content type="html" xml:base="http://localhost:4000/blog/welcome-to-the-blog/"><![CDATA[<p>This is the start of a practical blog focused on edge intelligence, robotics, and the systems thinking behind reliable products.</p>
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-02-18T19:01:47+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Moe Sani</title><subtitle>Visionary engineer and innovator specializing in robotics, embedded systems, and machine learning. Leading edge AI deployment and building intelligent systems for real-world impact.</subtitle><author><name>Mohammad Fattahi Sani</name></author><entry><title type="html">Edge AI inspection robot with Edge Impulse and ROS 2</title><link href="http://localhost:4000/blog/edge-impulse-ros2/" rel="alternate" type="text/html" title="Edge AI inspection robot with Edge Impulse and ROS 2" /><published>2026-02-18T00:00:00+00:00</published><updated>2026-02-18T00:00:00+00:00</updated><id>http://localhost:4000/blog/edge-impulse-ros2</id><content type="html" xml:base="http://localhost:4000/blog/edge-impulse-ros2/"><![CDATA[<p><img src="/assets/images/posts/desk-robot.jpeg" alt="Moe at the robotics workstation" /></p>
+
+<p>I am building an Edge AI inspection robot, and the first milestone is complete.</p>
+
+<p>Perception is a core pillar of modern robotics, and today it is inseparable from machine learning. The real challenge is not just training a model. It is getting a custom, lightweight model trained quickly and running reliably on real hardware.</p>
+
+<p>I have now integrated Edge Impulse object detection models directly into the ROS 2 ecosystem.</p>
+
+<p><strong>What is happening in the demo:</strong></p>
+<ul>
+  <li>An Edge Impulse <code class="language-plaintext highlighter-rouge">.eim</code> object detection model runs inside a ROS 2 node</li>
+  <li>The node publishes <code class="language-plaintext highlighter-rouge">vision_msgs/Detection2DArray</code> messages with bounding boxes</li>
+  <li>A second ROS node consumes those detections</li>
+  <li>The robot pan-tilt actively tracks and points toward the detected object</li>
+</ul>
+
+<p>This is a strong step toward ROS-native Edge AI: fast iteration, embedded-friendly models, and clean integration into real robotic systems.</p>
+
+<p>More updates coming soon. I will share deeper technical details and source code shortly.</p>
+
+<p>Where do you think Edge AI matters most in robots?</p>]]></content><author><name>Moe Sani</name></author><category term="Robotics" /><category term="ROS2" /><category term="Edge AI" /><category term="Edge Impulse" /><category term="Computer Vision" /><category term="Embedded AI" /><category term="Open Source" /><category term="Qualcomm" /><summary type="html"><![CDATA[Integrating Edge Impulse object detection with ROS 2 for real-time perception and tracking on an inspection robot.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/assets/images/posts/desk-robot.jpeg" /><media:content medium="image" url="http://localhost:4000/assets/images/posts/desk-robot.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry><entry><title type="html">Welcome to the Lab Notes</title><link href="http://localhost:4000/blog/welcome-to-the-blog/" rel="alternate" type="text/html" title="Welcome to the Lab Notes" /><published>2026-02-18T00:00:00+00:00</published><updated>2026-02-18T00:00:00+00:00</updated><id>http://localhost:4000/blog/welcome-to-the-blog</id><content type="html" xml:base="http://localhost:4000/blog/welcome-to-the-blog/"><![CDATA[<p>This is the start of a practical blog focused on edge intelligence, robotics, and the systems thinking behind reliable products.</p>
 
 <p>In upcoming posts, I will share:</p>
 
