@@ -1,0 +1,20 @@
+---
+layout: default
+---
+
+<section class="section">
+  <div class="container">
+    <article class="card" style="padding: 40px;">
+      <h1 class="section-title">{{ page.title }}</h1>
+      <p class="section-lede">{{ page.date | date: "%B %d, %Y" }}</p>
+      <div class="tag-list" style="margin-bottom: 24px;">
+        {% for tag in page.tags %}
+        <span class="tag">{{ tag }}</span>
+        {% endfor %}
+      </div>
+      <div class="post-content">
+        {{ content }}
+      </div>
+    </article>
+  </div>
+</section>

@@ -1,0 +1,43 @@
+title: Moe Sani
+email: ""
+description: >-
+  Visionary engineer and innovator specializing in robotics, embedded systems,
+  and machine learning. Leading edge AI deployment and building intelligent
+  systems for real-world impact.
+url: "https://moesani.com"
+baseurl: ""
+lang: en
+
+author:
+  name: Mohammad Fattahi Sani
+  url: https://moesani.com
+
+social:
+  name: Moe Sani
+  links:
+    - https://linkedin.com/in/moe-sani
+    - https://www.instagram.com/saniitravels
+    - https://www.youtube.com/@moesani
+    - https://github.com/moe-sani
+
+permalink: /blog/:title/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+
+collections:
+  projects:
+    output: true
+  publications:
+    output: false
+
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: post
+      author: Moe Sani
+      image: /moe.jpeg

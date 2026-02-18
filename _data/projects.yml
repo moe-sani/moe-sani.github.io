@@ -1,0 +1,34 @@
+- title: SMARTsurg Project
+  subtitle: Surgical robotics, intelligent assistance
+  description: Contributed to surgical robotics research at Bristol Robotics Laboratory, focusing on intelligent assistance systems and precision automation.
+  tags: [Robotics, Healthcare, AI, Research]
+  icon: "🏥"
+  link: https://smartsurg-project.eu/
+
+- title: Robot Teleoperativo
+  subtitle: Immersive teleoperation systems
+  description: Developed advanced teleoperation systems at Italian Institute of Technology for remote robotic control in hazardous environments.
+  tags: [Teleoperation, Robotics, VR, Safety]
+  icon: "🤖"
+  link: https://advr.iit.it/projects/inail-scc/teleoperazione
+
+- title: Edge AI Solutions
+  subtitle: Deploying intelligence at the edge
+  description: Leading innovation in edge AI deployment, helping developers build intelligent IoT solutions with reduced latency and cost.
+  tags: [Edge AI, IoT, ML, Optimization]
+  icon: "🧠"
+  link: /#contact
+
+- title: Dyson Future Robotics
+  subtitle: Consumer robotics innovation
+  description: Drove innovation for Dyson's next generation of intelligent household robots as Associate Principal Software Engineer.
+  tags: [Consumer Robotics, Software, Product]
+  icon: "🏠"
+  link: https://www.dyson.co.uk
+
+- title: Industrial IoT Optimization
+  subtitle: Embedded systems and appliances
+  description: Delivered embedded systems and IoT solutions for industrial applications in household appliances.
+  tags: [Embedded Systems, IoT, Product]
+  icon: "⚙️"
+  link: http://parlar.ir/en/

@@ -1,0 +1,15 @@
+- name: LinkedIn
+  url: https://linkedin.com/in/moe-sani
+  icon: linkedin
+
+- name: Instagram
+  url: https://www.instagram.com/saniitravels
+  icon: instagram
+
+- name: YouTube
+  url: https://www.youtube.com/@moesani
+  icon: youtube
+
+- name: GitHub
+  url: https://github.com/moe-sani
+  icon: github

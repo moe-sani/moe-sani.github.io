@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en"><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" hreflang="en" /><updated>2026-02-18T18:45:25+00:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">Moe Sani</title><subtitle>Visionary engineer and innovator specializing in robotics, embedded systems, and machine learning. Leading edge AI deployment and building intelligent systems for real-world impact.</subtitle><author><name>Mohammad Fattahi Sani</name></author><entry><title type="html">Welcome to the Lab Notes</title><link href="http://localhost:4000/blog/welcome-to-the-blog/" rel="alternate" type="text/html" title="Welcome to the Lab Notes" /><published>2026-02-18T00:00:00+00:00</published><updated>2026-02-18T00:00:00+00:00</updated><id>http://localhost:4000/blog/welcome-to-the-blog</id><content type="html" xml:base="http://localhost:4000/blog/welcome-to-the-blog/"><![CDATA[<p>This is the start of a practical blog focused on edge intelligence, robotics, and the systems thinking behind reliable products.</p>
+
+<p>In upcoming posts, I will share:</p>
+
+<ul>
+  <li>Design patterns for embedded AI deployments</li>
+  <li>Lessons learned from robotics research and product engineering</li>
+  <li>Practical tooling for sensors, ML pipelines, and inference optimization</li>
+</ul>
+
+<p>If there is a specific topic you want covered, reach out through the contact section.</p>]]></content><author><name>Moe Sani</name></author><category term="Edge AI" /><category term="Robotics" /><category term="Systems" /><summary type="html"><![CDATA[A quick hello and what to expect from this blog.]]></summary><media:thumbnail xmlns:media="http://search.yahoo.com/mrss/" url="http://localhost:4000/moe.jpeg" /><media:content medium="image" url="http://localhost:4000/moe.jpeg" xmlns:media="http://search.yahoo.com/mrss/" /></entry></feed>
