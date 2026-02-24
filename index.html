@@ -12,7 +12,7 @@ description: Visionary engineer and innovator specializing in robotics, embedded
       <p>Visionary engineer and innovator specializing in robotics, embedded systems, and machine learning. Currently contributing to cutting-edge advancements in edge AI.</p>
       <div class="hero-actions">
         <a class="button button-primary" href="/#contact">Get In Touch</a>
-        <a class="button button-secondary" href="/projects/">Explore Projects</a>
+        <a class="button button-secondary" href="/blog/">Read the Blog</a>
       </div>
     </div>
     <div class="hero-card reveal">
@@ -69,58 +69,6 @@ description: Visionary engineer and innovator specializing in robotics, embedded
   </div>
 </section>
 
-<section id="projects" class="section">
-  <div class="container">
-    <h2 class="section-title">Featured Projects</h2>
-    <p class="section-lede">Selected projects spanning surgical robotics, teleoperation, and edge AI systems.</p>
-    <div class="card-grid">
-      {% for project in site.data.projects limit:3 %}
-      <article class="card reveal">
-        <h3>{{ project.icon }} {{ project.title }}</h3>
-        <p>{{ project.description }}</p>
-        <div class="tag-list">
-          {% for tag in project.tags %}
-          <span class="tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-        <div style="margin-top: 16px;">
-          <a class="button button-secondary" href="{{ project.link }}"{% if project.link contains 'http' %} target="_blank" rel="noopener"{% endif %}>Learn More</a>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
-    <div style="margin-top: 28px;">
-      <a class="button button-primary" href="/projects/">View All Projects</a>
-    </div>
-  </div>
-</section>
-
-<section id="publications" class="section">
-  <div class="container">
-    <h2 class="section-title">Selected Publications</h2>
-    <p class="section-lede">Peer-reviewed contributions in robotics, edge AI, and intelligent systems.</p>
-    <div class="card-grid">
-      {% for pub in site.data.publications limit:3 %}
-      <article class="card reveal">
-        <h3>{{ pub.title }}</h3>
-        <p>{{ pub.venue }} · {{ pub.year }}</p>
-        <div class="tag-list">
-          {% for tag in pub.tags %}
-          <span class="tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-        <div style="margin-top: 16px;">
-          <a class="button button-secondary" href="{{ pub.link }}" target="_blank" rel="noopener">View Publication</a>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
-    <div style="margin-top: 28px;">
-      <a class="button button-primary" href="/publications/">See All Publications</a>
-    </div>
-  </div>
-</section>
-
 <section id="blog" class="section">
   <div class="container">
     <h2 class="section-title">Latest Blog Posts</h2>
@@ -153,6 +101,33 @@ description: Visionary engineer and innovator specializing in robotics, embedded
     </div>
   </div>
 </section>
+
+<section id="publications" class="section">
+  <div class="container">
+    <h2 class="section-title">Selected Publications</h2>
+    <p class="section-lede">Peer-reviewed contributions in robotics, edge AI, and intelligent systems.</p>
+    <div class="card-grid">
+      {% for pub in site.data.publications limit:3 %}
+      <article class="card reveal">
+        <h3>{{ pub.title }}</h3>
+        <p>{{ pub.venue }} · {{ pub.year }}</p>
+        <div class="tag-list">
+          {% for tag in pub.tags %}
+          <span class="tag">{{ tag }}</span>
+          {% endfor %}
+        </div>
+        <div style="margin-top: 16px;">
+          <a class="button button-secondary" href="{{ pub.link }}" target="_blank" rel="noopener">View Publication</a>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    <div style="margin-top: 28px;">
+      <a class="button button-primary" href="/publications/">See All Publications</a>
+    </div>
+  </div>
+</section>
+
 
 <section class="section">
   <div class="container">

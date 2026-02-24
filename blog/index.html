@@ -11,17 +11,23 @@ permalink: /blog/
     <p class="section-lede">Field notes on robotics, edge AI, and building resilient intelligent systems.</p>
     <div class="card-grid">
       {% for post in site.posts %}
-      <article class="card reveal">
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
-        <div class="tag-list">
-          <span class="tag">{{ post.date | date: "%b %d, %Y" }}</span>
-          {% for tag in post.tags %}
-          <span class="tag">{{ tag }}</span>
-          {% endfor %}
+      {% assign thumb = post.image | default: '/moe.jpeg' %}
+      <article class="card post-card reveal">
+        <div class="post-thumb">
+          <img src="{{ thumb }}" alt="{{ post.title }} thumbnail">
         </div>
-        <div style="margin-top: 16px;">
-          <a class="button button-secondary" href="{{ post.url }}">Read Post</a>
+        <div class="post-body">
+          <p class="post-meta">{{ post.date | date: "%b %d, %Y" }}</p>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+          <div class="tag-list">
+            {% for tag in post.tags %}
+            <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+          <div style="margin-top: 16px;">
+            <a class="button button-secondary" href="{{ post.url }}">Read Post</a>
+          </div>
         </div>
       </article>
       {% endfor %}

@@ -6,6 +6,7 @@ tags: [Robotics, ROS2, Edge AI, Agents, Jetson, Computer Vision]
 excerpt: "OpenClaw now controls my rover via ROS 2, turning high-level goals into real hardware actions with on-device perception and speech."
 image: /assets/images/posts/openclaw_robot.png
 ---
+![Open Claw Controlling my robot ](/assets/images/posts/openclaw_robot.png)
 
 Robots are often called autonomous, but in practice they usually run a carefully scripted program. We hard-code behaviors, wire them to sensors, and hope we predicted every edge case. The robot executes, but it does not decide. That is why this project feels like a genuine step forward: **OpenClaw is now controlling my rover via ROS 2**. It does not just run a pre-planned sequence. It can take a high-level goal, break it into tasks, interact with hardware, and respond to what it sees.
 
