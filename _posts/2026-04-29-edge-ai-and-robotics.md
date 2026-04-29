@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Edge AI for Robotics: Building Intelligent Machines That Can Sense, Decide, and Act"
+date: 2026-04-29
+tags: [Robotics, Edge AI, Physical AI, Embedded Systems, Computer Vision, Autonomy]
+excerpt: "How edge AI enables robots to sense, decide, and act reliably in real-world environments through low-latency, hybrid physical AI architectures."
+image: /assets/images/posts/edge-ai_robot.png
+---
+
 # **Edge AI for Robotics: Building Intelligent Machines That Can Sense, Decide, and Act**
 
 Robotics is entering a new phase. For many years the focus was on what robots could do in carefully controlled environments. Today the challenge is different. Robots are being deployed into factories, warehouses, hospitals, farms, construction sites, and public spaces where conditions change, data is noisy, and humans are part of the environment. In this context intelligence must be reliable, timely, and tightly integrated with physical systems.
