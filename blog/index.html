@@ -1,14 +1,14 @@
 ---
 layout: default
-title: Blog
-description: Insights on robotics, edge AI, and embedded systems from Moe Sani.
+title: Case Studies
+description: Business case studies on industrial edge AI, IoT architecture, and autonomous systems from Moe Sani.
 permalink: /blog/
 ---
 
 <section class="section">
   <div class="container">
-    <h1 class="section-title">Blog</h1>
-    <p class="section-lede">Field notes on robotics, edge AI, and building resilient intelligent systems.</p>
+    <h1 class="section-title">Business Case Studies</h1>
+    <p class="section-lede">Decision-focused case studies on edge AI and IoT architecture — showing what was at stake, what path was chosen, and how risk was reduced.</p>
     <div class="card-grid">
       {% for post in site.posts %}
       {% assign thumb = post.image | default: '/moe.jpeg' %}
@@ -26,7 +26,7 @@ permalink: /blog/
             {% endfor %}
           </div>
           <div style="margin-top: 16px;">
-            <a class="button button-secondary" href="{{ post.url }}">Read Post</a>
+            <a class="button button-secondary" href="{{ post.url }}">Read Case Study</a>
           </div>
         </div>
       </article>
