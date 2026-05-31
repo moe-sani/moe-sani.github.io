@@ -160,12 +160,22 @@ description: Architecting scalable edge AI and IoT systems for industrial leader
           <textarea id="contact-message" name="message" rows="6" required></textarea>
         </label>
         <input type="hidden" name="_subject" value="New website inquiry from moesani.com">
+        <input type="hidden" name="_next" value="/thank-you/">
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="contact-honeypot" aria-hidden="true">
-        <button class="button button-primary" type="submit">Send Message</button>
+        <button class="button button-primary contact-submit" type="submit">Send Message</button>
       </form>
-      <div class="social-list">
+    </div>
+  </div>
+</section>
+
+<section class="section social-section">
+  <div class="container">
+    <div class="social-panel reveal">
+      <h2 class="section-title">Connect on Social</h2>
+      <p class="section-lede">Prefer social channels? Reach out where you are most active.</p>
+      <div class="social-list social-list-dark">
         {% for item in site.data.social %}
-        <a class="social-chip" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>
+        <a class="social-chip social-chip-dark" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>
         {% endfor %}
       </div>
     </div>
