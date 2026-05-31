@@ -140,6 +140,29 @@ description: Architecting scalable edge AI and IoT systems for industrial leader
     <div class="contact-panel reveal">
       <h2 class="section-title" style="color: #ffffff;">Get In Touch</h2>
       <p>Need architectural clarity before making a major edge AI or IoT investment? Let’s design the right system now so you don’t pay for avoidable mistakes later.</p>
+      <form class="contact-form" action="https://formspree.io/f/mvzynnod" method="POST">
+        <div class="contact-grid">
+          <label class="contact-field" for="contact-name">
+            Name
+            <input id="contact-name" type="text" name="name" autocomplete="name" required>
+          </label>
+          <label class="contact-field" for="contact-email">
+            Email
+            <input id="contact-email" type="email" name="email" autocomplete="email" required>
+          </label>
+        </div>
+        <label class="contact-field" for="contact-company">
+          Company (optional)
+          <input id="contact-company" type="text" name="company" autocomplete="organization">
+        </label>
+        <label class="contact-field" for="contact-message">
+          Message
+          <textarea id="contact-message" name="message" rows="6" required></textarea>
+        </label>
+        <input type="hidden" name="_subject" value="New website inquiry from moesani.com">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="contact-honeypot" aria-hidden="true">
+        <button class="button button-primary" type="submit">Send Message</button>
+      </form>
       <div class="social-list">
         {% for item in site.data.social %}
         <a class="social-chip" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>
