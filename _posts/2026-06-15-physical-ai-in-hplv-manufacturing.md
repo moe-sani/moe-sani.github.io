@@ -231,7 +231,7 @@ But inspection is only perception — seeing and judging. The real frontier of P
 
 ### 5.1 Robotic Polishing — Christian Tse Design & Manufacturing
 
-![Christian Tse VDK-2300 Robotic Polishing System](https://www.jckonline.com/wp-content/uploads/2022/10/Christian-Tse-Robot-1024x576.jpg)
+![Christian Tse VDK-2300 Robotic Polishing System](/assets/images/posts/christian-tse-robot-arms.jpg)
 *The VDK-2300 dual-arm robotic polishing system at Christian Tse's Monrovia, California facility. Source: [JCK](https://www.jckonline.com/editorial-article/future-of-jewelry-manufacturing/)*
 
 Perhaps the most documented example of robotics in luxury jewelry manufacturing is the system built by **Christian Tse Design & Manufacturing (CTD&M)** in California, in partnership with **Flexible Robotic Environment (FRE)**. Their custom VDK-2300 system, which cost approximately **$2 million** to develop, uses a dual articulated-arm robot enclosed in a modular cell. One arm holds the piece of jewelry; the other holds the specific polishing tool required for that particular design.
@@ -251,8 +251,8 @@ The robot handles the physically demanding, repetitive first polish; the human a
 
 ### 5.2 Desktop Micro-Factory — Horosys & Mecademic Meca500
 
-![Horosys Smart Micro Factory with Mecademic Meca500](https://www.roboticstomorrow.com/images/articles/17038-Micro_Factory.jpg)
-*One of many possible modules for the Smart Micro Factory. Copyright Horosys SA. Source: [RoboticsTomorrow](https://www.roboticstomorrow.com/article/2021/06/smart-micro-factories-for-the-watchmaking-industry/17038/)*
+![Horosys Smart Micro Factory with Mecademic Meca500](/assets/images/posts/horosys-meca500-watchmaking.jpg)
+*Mecademic Meca500 in watchmaking setup (video thumbnail). Sources: [Mecademic YouTube video](https://www.youtube.com/watch?v=6TJ7fWcaRoA), [RoboticsTomorrow article](https://www.roboticstomorrow.com/article/2021/06/smart-micro-factories-for-the-watchmaking-industry/17038/)*
 
 While the CTD&M system addresses jewelry polishing, a Swiss company called **Horosys** has tackled an even more challenging problem: automating the assembly of watch movements. Their **Smart Micro Factory (SMF)** concept, built around the **Mecademic Meca500** — the world's smallest six-axis industrial robot — demonstrates that Physical AI can operate at the microscopic precision levels required by haute horlogerie.
 
@@ -278,7 +278,7 @@ What makes this system significant for HPLV is its design philosophy: specifical
 
 ### 5.3 The Intelligent Factory — Omega, Bienne, Switzerland
 
-![Omega Factory Bienne](https://www.omegawatches.com/media/wysiwyg/omega/stories/new-factory/omega-new-factory-hero.jpg)
+![Omega Factory Bienne](/assets/images/posts/omega-factory-bienne.jpg)
 *Omega's newest production facility in Bienne, Switzerland. Designed by Shigeru Ban. Source: [Omega](https://www.omegawatches.com/stories/omegas-newest-factory-is-opened)*
 
 Omega's production facility in Bienne, Switzerland — designed by Pritzker Prize-winning architect **Shigeru Ban** and opened in 2017 — represents perhaps the most sophisticated example of automation in luxury watchmaking. It is not, however, a story of robots assembling watches. It is a story of **intelligent logistics, material flow, and environment management** that enables human watchmakers to work at peak efficiency.
