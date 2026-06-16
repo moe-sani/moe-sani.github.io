@@ -1,56 +1,21 @@
 <!DOCTYPE html>
-<html lang="{{ site.lang | default: 'en' }}">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#0f172a">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/styles.css">
-    {% seo %}
-    <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Mohammad Fattahi Sani",
-        "alternateName": "Moe Sani",
-        "url": "{{ site.url }}",
-        "sameAs": [{% for link in site.social.links %}"{{ link }}"{% if forloop.last == false %}, {% endif %}{% endfor %}]
-      }
-    </script>
-  </head>
-  <body>
-    <a class="skip-link" href="#content">Skip to content</a>
-
-    <header class="site-header">
-      <div class="container navbar">
-        <a class="brand" href="/">Moe Sani</a>
-        <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
-        <ul id="primary-nav" class="nav-links" role="list">
-          <li><a href="/" {% if page.url == '/' %}aria-current="page"{% endif %}>Home</a></li>
-          <li><a href="/about-me/" {% if page.url == '/about-me/' %}aria-current="page"{% endif %}>About</a></li>
-          <li><a href="/publications/" {% if page.url == '/publications/' %}aria-current="page"{% endif %}>Publications</a></li>
-          <li><a href="/blog/" {% if page.url == '/blog/' %}aria-current="page"{% endif %}>Case Studies</a></li>
-          <li><a href="/#contact">Contact</a></li>
-        </ul>
-      </div>
-    </header>
-
-    <main id="content">
-      {{ content }}
-    </main>
-
-    <footer class="site-footer">
-      <div class="container">
-        <p>&copy; {{ "now" | date: "%Y" }} Moe Sani. All rights reserved.</p>
-      </div>
-    </footer>
-
-    <script src="/assets/js/main.js" defer></script>
-  </body>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}{{ site.title }}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | relative_url }}">
+  {% seo %}
+</head>
+<body>
+  {% include header.html %}
+  <main>{{ content }}</main>
+  {% include footer.html %}
+  <script src="{{ '/assets/js/main.js' | relative_url }}"></script>
+</body>
 </html>

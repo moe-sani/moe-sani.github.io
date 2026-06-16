@@ -1,183 +1,127 @@
 ---
-layout: default
-title: Moe Sani
-description: Architecting scalable edge AI and IoT systems for industrial leaders with future-proof technical strategy.
+layout: home
+title: Home
 ---
 
-<section id="home" class="hero">
-  <div class="container hero-grid">
-    <div class="reveal">
-      <div class="hero-badge">Industrial Edge AI · IoT Architecture · Autonomous Systems</div>
-      <h1>Architecting Scalable Edge AI for Industrial Leaders</h1>
-      <p>I help early-stage companies building hardware and AI products avoid costly technical mistakes by designing edge intelligence systems that work in production and scale for the next five years.</p>
-      <div class="hero-actions">
-        <a class="button button-primary" href="/#contact">Book a Strategy Call</a>
-        <a class="button button-secondary" href="/Case Studies/">View Case Studies</a>
-      </div>
-    </div>
-    <div class="hero-card reveal">
-      <div class="hero-photo">
-        <img src="https://raw.githubusercontent.com/moe-sani/moe-sani.github.io/refs/heads/master/moe_2.jpg" alt="Moe Sani portrait">
-      </div>
-      <div class="hero-meta">
-        <div>Future-Proof Edge Intelligence<span>Architecture decisions built to scale 5+ years</span></div>
-        <div>Risk Reduction<span>Avoid expensive rework and technical debt</span></div>
-        <div>Production Delivery<span>Edge AI & IoT systems that actually ship</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="about" class="section">
-  <div class="container section-rail">
-    <div class="reveal">
-      <h2 class="section-title">Bio</h2>
-      <p class="section-lede">I serve as a Adviser for founders, product leaders, and investors building industrial edge AI and autonomous systems.</p>
-      <p>My work focuses on one outcome: helping teams choose the right technical architecture the first time so they can move faster, reduce risk, and avoid six-figure to seven-figure mistakes in hardware and AI product development.</p>
-      <p>From edge deployment strategy to system integration and scaling plans, I help companies build the brain of their industrial operation while leadership stays focused on the business.</p>
-      <div style="margin-top: 24px;">
-        <a class="button button-secondary" href="/about-me/">Read Full Bio</a>
-      </div>
-    </div>
-    <div class="rail-card reveal">
-      <h3>Who I Help</h3>
-      <div class="tag-list">
-        <span class="tag">Founders / CEOs / CTOs</span>
-        <span class="tag">Product & Innovation Leads</span>
-        <span class="tag">Industrial Tech Startups</span>
-        <span class="tag">Investors & VCs</span>
-        <span class="tag">Hardware + AI Teams</span>
-      </div>
-      <div class="timeline" style="margin-top: 24px;">
-        <div>
-          <h4>Architecture Foresight</h4>
-          <span>See around corners before technical debt forms</span>
-        </div>
-        <div>
-          <h4>Stack Decisions</h4>
-          <span>Choose platforms, models, and deployment paths with confidence</span>
-        </div>
-        <div>
-          <h4>Execution Confidence</h4>
-          <span>Ship faster than competitors with lower risk</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="Case Studies" class="section">
+<!-- HERO -->
+<section class="hero">
   <div class="container">
-    <h2 class="section-title">Business Case Studies</h2>
-    <p class="section-lede">Real-world breakdowns of complex edge AI and IoT decisions, with a focus on business impact, risk reduction, and production outcomes.</p>
-    <div class="card-grid">
-      {% for post in site.posts limit:3 %}
-      {% assign thumb = post.image | default: '/moe.jpeg' %}
-      <article class="card post-card reveal">
-        <div class="post-thumb">
-          <img src="{{ thumb }}" alt="{{ post.title }} thumbnail">
+    <div class="hero__grid">
+      <div class="hero__content">
+        <div class="hero__label">Available for consulting &amp; speaking</div>
+        <h1 class="hero__title">Hi, I'm <span>Moe Sani</span></h1>
+        <p class="hero__tagline">
+          I help companies design and deploy Edge AI and IoT systems that work reliably in the real world — not just in demos. Qualcomm · ex-Dyson · 10+ years in robotics &amp; embedded ML.
+        </p>
+        <div class="hero__actions">
+          <a href="{{ '/case-studies/' | relative_url }}" class="btn btn--primary">View Case Studies</a>
+          <a href="{{ '/contact/' | relative_url }}" class="btn btn--outline">Get in Touch</a>
         </div>
-        <div class="post-body">
-          <p class="post-meta">{{ post.date | date: "%b %d, %Y" }}</p>
-          <h3>{{ post.title }}</h3>
-          <p>{{ post.excerpt | strip_html | truncate: 160 }}</p>
-          <div class="tag-list">
-            {% for tag in post.tags limit:3 %}
-            <span class="tag">{{ tag }}</span>
-            {% endfor %}
-          </div>
-          <div style="margin-top: 16px;">
-            <a class="button button-secondary" href="{{ post.url }}">Read Case Study</a>
-          </div>
-        </div>
-      </article>
+      </div>
+      <div class="hero__image-wrapper">
+        <div class="hero__image-bg"></div>
+        <img src="{{ '/assets/images/moe.jpeg' | relative_url }}" alt="Moe Sani" class="hero__image">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Expertise pills -->
+<section class="section--alt" style="padding: var(--sp-lg) 0;">
+  <div class="container">
+    <div class="expertise-bar">
+      <span class="expertise-pill">🤖 Robotics &amp; ROS 2</span>
+      <span class="expertise-pill">⚡ Edge AI &amp; Embedded ML</span>
+      <span class="expertise-pill">🔧 Qualcomm Platforms</span>
+      <span class="expertise-pill">📡 IoT Architecture</span>
+      <span class="expertise-pill">🏭 Industrial Inspection</span>
+      <span class="expertise-pill">🎤 Keynote Speaker</span>
+    </div>
+  </div>
+</section>
+
+<!-- LATEST CASE STUDIES -->
+<section class="section" id="case-studies">
+  <div class="container">
+    <h2 class="section__title">Latest Case Studies</h2>
+    <div class="cards-grid">
+      {% assign studies = site.case_studies | sort: 'date' | reverse %}
+      {% for study in studies limit:3 %}
+        {% include case-study-card.html study=study %}
       {% endfor %}
     </div>
-    <div style="margin-top: 28px;">
-      <a class="button button-primary" href="/blog/">View All Case Studies</a>
+    <div class="text-center" style="margin-top: var(--sp-xl);">
+      <a href="{{ '/case-studies/' | relative_url }}" class="btn btn--outline">View All Case Studies →</a>
     </div>
   </div>
 </section>
 
-<section id="publications" class="section">
-  <div class="container">
-    <h2 class="section-title">Selected Publications</h2>
-    <p class="section-lede">Peer-reviewed contributions in robotics, edge AI, and intelligent systems.</p>
-    <div class="card-grid">
-      {% for pub in site.data.publications limit:3 %}
-      <article class="card reveal">
-        <h3>{{ pub.title }}</h3>
-        <p>{{ pub.venue }} · {{ pub.year }}</p>
-        <div class="tag-list">
-          {% for tag in pub.tags %}
-          <span class="tag">{{ tag }}</span>
-          {% endfor %}
-        </div>
-        <div style="margin-top: 16px;">
-          <a class="button button-secondary" href="{{ pub.link }}" target="_blank" rel="noopener">View Publication</a>
-        </div>
-      </article>
-      {% endfor %}
-    </div>
-    <div style="margin-top: 28px;">
-      <a class="button button-primary" href="/publications/">See All Publications</a>
+<!-- FEATURED VIDEO — Hardware Pioneers 2024 -->
+<section class="section section--alt" id="featured-video">
+  <div class="container video-section">
+    <h2 class="section__title">Featured Talk</h2>
+    <p class="text-muted" style="max-width:600px; margin:0 auto var(--sp-xl);">
+      Machine Learning on the Edge for Robotics Applications — Hardware Pioneers Max 2024, London
+    </p>
+    <div class="video-wrapper">
+      <iframe
+        src="https://www.youtube.com/embed/f1fv0WD6vmE"
+        title="Machine Learning on the Edge for Robotics Applications - Moe Sani"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen loading="lazy"
+      ></iframe>
     </div>
   </div>
 </section>
 
-
-<section class="section">
+<!-- GET IN TOUCH -->
+<section class="section" id="contact">
   <div class="container">
-    <h2 class="section-title">Featured Video</h2>
-    <p class="section-lede">Watch my latest insights on technology and innovation.</p>
-    <div class="video-wrap reveal">
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/f1fv0WD6vmE?si=tRylLpVHcbL5WCuH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>    </div>
-  </div>
-</section>
-
-<section id="contact" class="section">
-  <div class="container">
-    <div class="contact-panel reveal">
-      <h2 class="section-title" style="color: #ffffff;">Get In Touch</h2>
-      <p>Need architectural clarity before making a major edge AI or IoT investment? Let’s design the right system now so you don’t pay for avoidable mistakes later.</p>
-      <form class="contact-form" action="https://formspree.io/f/mvzynnod" method="POST">
-        <div class="contact-grid">
-          <label class="contact-field" for="contact-name">
-            Name
-            <input id="contact-name" type="text" name="name" autocomplete="name" required>
-          </label>
-          <label class="contact-field" for="contact-email">
-            Email
-            <input id="contact-email" type="email" name="email" autocomplete="email" required>
-          </label>
+    <h2 class="section__title">Get in Touch</h2>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Let's work together</h3>
+        <p>Whether you need help designing edge AI architecture, want a speaker for your event, or are looking for technical strategy advice — I'd love to hear from you.</p>
+        <div class="contact-info__item">
+          <div class="contact-info__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          </div>
+          <div><strong>Email</strong><br><a href="mailto:{{ site.author.email }}">{{ site.author.email }}</a></div>
         </div>
-        <label class="contact-field" for="contact-company">
-          Company (optional)
-          <input id="contact-company" type="text" name="company" autocomplete="organization">
-        </label>
-        <label class="contact-field" for="contact-message">
-          Message
-          <textarea id="contact-message" name="message" rows="6" required></textarea>
-        </label>
-        <input type="hidden" name="_subject" value="New website inquiry from moesani.com">
-        <input type="hidden" name="_next" value="/thank-you/">
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="contact-honeypot" aria-hidden="true">
-        <button class="button button-primary contact-submit" type="submit">Send Message</button>
+        <div class="contact-info__item">
+          <div class="contact-info__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <div><strong>Location</strong><br>{{ site.author.location }}</div>
+        </div>
+        <div class="contact-info__item">
+          <div class="contact-info__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+          </div>
+          <div><strong>LinkedIn</strong><br><a href="https://linkedin.com/in/{{ site.author.linkedin }}" target="_blank">linkedin.com/in/{{ site.author.linkedin }}</a></div>
+        </div>
+      </div>
+      <form class="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="_replyto" placeholder="your@email.com" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <input type="text" id="subject" name="subject" placeholder="What's this about?">
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your project or inquiry..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary" style="width:100%; justify-content:center;">Send Message →</button>
       </form>
-    </div>
-  </div>
-</section>
-
-<section class="section social-section">
-  <div class="container">
-    <div class="social-panel reveal">
-      <h2 class="section-title">Connect on Social</h2>
-      <p class="section-lede">Prefer social channels? Reach out where you are most active.</p>
-      <div class="social-list social-list-dark">
-        {% for item in site.data.social %}
-        <a class="social-chip social-chip-dark" href="{{ item.url }}" target="_blank" rel="noopener">{{ item.name }}</a>
-        {% endfor %}
-      </div>
     </div>
   </div>
 </section>

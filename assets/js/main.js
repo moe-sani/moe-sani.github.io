@@ -1,43 +1,44 @@
-const navToggle = document.querySelector(".nav-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-if (navToggle && navLinks) {
-  navToggle.addEventListener("click", () => {
-    navLinks.classList.toggle("is-open");
-    const expanded = navToggle.getAttribute("aria-expanded") === "true";
-    navToggle.setAttribute("aria-expanded", (!expanded).toString());
+// Mobile Navigation Toggle
+const toggle = document.getElementById('nav-toggle');
+const navLinks = document.getElementById('nav-links');
+if (toggle && navLinks) {
+  toggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => navLinks.classList.remove('open'));
   });
 }
 
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", (event) => {
-    const targetId = anchor.getAttribute("href");
-    if (!targetId || targetId.length < 2) {
-      return;
-    }
-    const target = document.querySelector(targetId);
+// Header scroll shadow
+const header = document.getElementById('site-header');
+if (header) {
+  window.addEventListener('scroll', () => {
+    header.classList.toggle('scrolled', window.scrollY > 10);
+  });
+}
+
+// Fade-in on scroll
+const fadeEls = document.querySelectorAll('.fade-in');
+if (fadeEls.length && 'IntersectionObserver' in window) {
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  fadeEls.forEach(el => observer.observe(el));
+} else {
+  fadeEls.forEach(el => el.classList.add('visible'));
+}
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const target = document.querySelector(this.getAttribute('href'));
     if (target) {
-      event.preventDefault();
-      target.scrollIntoView({ behavior: "smooth", block: "start" });
-      navLinks?.classList.remove("is-open");
-      navToggle?.setAttribute("aria-expanded", "false");
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   });
 });
-
-const revealEls = document.querySelectorAll(".reveal");
-if ("IntersectionObserver" in window && revealEls.length) {
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    },
-    { threshold: 0.2 }
-  );
-
-  revealEls.forEach((el) => observer.observe(el));
-}

@@ -1,0 +1,20 @@
+<article class="card fade-in">
+  {% if include.study.thumbnail %}
+    <img class="card__image" src="{{ include.study.thumbnail | relative_url }}" alt="{{ include.study.title }}">
+  {% else %}
+    <div class="card__image" style="display:flex;align-items:center;justify-content:center;font-size:2.5rem;background:linear-gradient(135deg, var(--clr-accent-light), var(--clr-bg-alt));">
+      {{ include.study.icon | default: "🔬" }}
+    </div>
+  {% endif %}
+  <div class="card__body">
+    <div class="card__tags">
+      {% for tag in include.study.tags limit:3 %}<span class="card__tag">{{ tag }}</span>{% endfor %}
+    </div>
+    <h3 class="card__title"><a href="{{ include.study.url | relative_url }}">{{ include.study.title }}</a></h3>
+    <p class="card__excerpt">{{ include.study.excerpt | strip_html | truncatewords: 25 }}</p>
+    <div class="card__meta">
+      <span>{{ include.study.date | date: "%b %d, %Y" }}</span>
+      <a href="{{ include.study.url | relative_url }}" class="card__read-more">Read more</a>
+    </div>
+  </div>
+</article>

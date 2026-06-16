@@ -1,41 +1,46 @@
 title: Moe Sani
-email: ""
-description: >-
-  Architecting Scalable Edge AI for Industrial Leaders
+description: "Architecting Scalable Edge AI for Industrial Leaders"
 url: "https://moesani.com"
 baseurl: ""
-lang: en
-
 author:
-  name: Mohammad Fattahi Sani
-  url: https://moesani.com
-
-social:
   name: Moe Sani
-  links:
-    - https://linkedin.com/in/moe-sani
-    - https://www.instagram.com/saniitravels
-    - https://www.youtube.com/@moesani
-    - https://github.com/moe-sani
+  full_name: Mohammad Fattahi Sani
+  title: Edge AI Solution Architect & Staff Solutions Engineer
+  company: Qualcomm / Edge Impulse
+  location: Bristol, UK
+  email: moe@moesani.com
+  linkedin: moe-sani
+  github: moe-sani
+  youtube_channel: "@MoeSaniTech"
+  scholar: "jP9cQ5IAAAAJ"
+  website: moesani.com
+  tagline: "Bringing intelligence to the edge — where AI meets the physical world."
 
-permalink: /blog/:title/
-
-plugins:
-  - jekyll-seo-tag
-  - jekyll-feed
-  - jekyll-sitemap
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+sass:
+  style: compressed
 
 collections:
-  projects:
+  case_studies:
     output: true
-  publications:
-    output: false
+    permalink: /case-studies/:slug/
+    sort_by: date
 
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: "case_studies"
     values:
-      layout: post
-      author: Moe Sani
-      image: /moe.jpeg
+      layout: "case-study"
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - node_modules

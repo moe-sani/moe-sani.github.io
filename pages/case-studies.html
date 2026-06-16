@@ -1,0 +1,28 @@
+---
+layout: default
+title: Case Studies
+permalink: /case-studies/
+---
+
+<div class="page-header">
+  <div class="container">
+    <h1>Case Studies</h1>
+    <p>Real-world edge AI and robotics projects</p>
+  </div>
+</div>
+
+<section class="section">
+  <div class="container">
+    <div class="cards-grid">
+      {% assign studies = site.case_studies | sort: 'date' | reverse %}
+      {% for study in studies %}
+        {% include case-study-card.html study=study %}
+      {% endfor %}
+    </div>
+    {% if site.case_studies.size == 0 %}
+      <div class="text-center" style="padding: var(--sp-2xl) 0;">
+        <p class="text-muted" style="font-size:1.1rem;">Case studies coming soon. Check back later!</p>
+      </div>
+    {% endif %}
+  </div>
+</section>

@@ -1,0 +1,17 @@
+<header class="site-header" id="site-header">
+  <div class="container">
+    <nav class="nav">
+      <a href="{{ '/' | relative_url }}" class="nav__logo">Moe<span>.</span>Sani</a>
+      <div class="nav__links" id="nav-links">
+        <a href="{{ '/' | relative_url }}" {% if page.url == '/' %}class="active"{% endif %}>Home</a>
+        <a href="{{ '/about/' | relative_url }}" {% if page.url contains '/about' %}class="active"{% endif %}>About</a>
+        <a href="{{ '/case-studies/' | relative_url }}" {% if page.url contains '/case-studies' %}class="active"{% endif %}>Case Studies</a>
+        <a href="{{ '/publications/' | relative_url }}" {% if page.url contains '/publications' %}class="active"{% endif %}>Publications</a>
+        <a href="{{ '/contact/' | relative_url }}" {% if page.url contains '/contact' %}class="active"{% endif %}>Contact</a>
+      </div>
+      <button class="nav__toggle" id="nav-toggle" aria-label="Toggle navigation">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+  </div>
+</header>
