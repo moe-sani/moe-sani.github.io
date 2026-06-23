@@ -2,19 +2,40 @@
 layout: default
 ---
 
-<section class="section">
-  <div class="container">
-    <article class="card" style="padding: 40px;">
-      <h1 class="section-title">{{ page.title }}</h1>
-      <p class="section-lede">{{ page.date | date: "%B %d, %Y" }}</p>
-      <div class="tag-list" style="margin-bottom: 24px;">
-        {% for tag in page.tags %}
-        <span class="tag">{{ tag }}</span>
-        {% endfor %}
+<article class="article">
+  <div class="container-narrow">
+    <header class="article-header reveal">
+      <nav class="breadcrumbs" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span>/</span>
+        <a href="/blog/">Case Studies</a>
+      </nav>
+      <h1>{{ page.title }}</h1>
+      <div class="article-meta">
+        <time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%B %-d, %Y" }}</time>
+        {% if page.tags.size > 0 %}
+        <span class="dot" aria-hidden="true"></span>
+        <span>{{ page.tags | join: " · " }}</span>
+        {% endif %}
       </div>
-      <div class="post-content">
-        {{ content }}
-      </div>
-    </article>
+    </header>
+
+    {% if page.image %}
+    <figure class="article-cover reveal">
+      <img src="{{ page.image }}" alt="{{ page.title }} cover image">
+    </figure>
+    {% endif %}
+
+    <div class="article-body reveal">
+      {{ content }}
+    </div>
+
+    <nav class="post-nav">
+      <a class="button button-secondary" href="/blog/">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        All Case Studies
+      </a>
+      <a class="button button-primary" href="/#contact">Discuss a Project</a>
+    </nav>
   </div>
-</section>
+</article>

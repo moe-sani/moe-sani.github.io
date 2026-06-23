@@ -1,31 +1,45 @@
 ---
 layout: default
 title: Publications
-description: Research publications by Moe Sani across robotics, AI, and intelligent systems.
+description: Peer-reviewed research by Moe Sani across robotics, edge AI, teleoperation, and intelligent systems.
+permalink: /publications/
 ---
 
-<section class="section">
+<section class="page-hero">
   <div class="container">
-    <h1 class="section-title">Publications</h1>
-    <p class="section-lede">Research contributions in robotics, AI, teleoperation, and embedded intelligence.</p>
-    <div style="margin: 24px 0 32px;">
-      <a class="button button-secondary" href="https://scholar.google.co.uk/citations?user=jP9cQ5IAAAAJ&hl=en" target="_blank" rel="noopener">View on Google Scholar</a>
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><span>Publications</span>
+    </nav>
+    <span class="eyebrow">Research</span>
+    <h1>Publications</h1>
+    <p>Research contributions in robotics, AI, teleoperation, and embedded intelligence.</p>
+    <div style="margin-top: 24px;">
+      <a class="button button-secondary" href="https://scholar.google.co.uk/citations?user=jP9cQ5IAAAAJ&hl=en" target="_blank" rel="noopener">
+        View on Google Scholar
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+      </a>
     </div>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
     <div class="card-grid">
       {% for pub in site.data.publications %}
-      <article class="card reveal">
+      <a class="card pub-card reveal" href="{{ pub.link }}" target="_blank" rel="noopener" data-delay="{{ forloop.index0 | modulo: 3 }}">
+        <p class="pub-venue">{{ pub.venue }} · {{ pub.year }}</p>
         <h3>{{ pub.title }}</h3>
-        <p>{{ pub.authors }}</p>
-        <p>{{ pub.venue }} · {{ pub.year }} · {{ pub.type }}</p>
+        <p class="pub-authors">{{ pub.authors }} · {{ pub.type }}</p>
+        {% if pub.tags %}
         <div class="tag-list">
-          {% for tag in pub.tags %}
-          <span class="tag">{{ tag }}</span>
-          {% endfor %}
+          {% for tag in pub.tags %}<span class="tag">{{ tag }}</span>{% endfor %}
         </div>
-        <div style="margin-top: 16px;">
-          <a class="button button-secondary" href="{{ pub.link }}" target="_blank" rel="noopener">View Publication</a>
-        </div>
-      </article>
+        {% endif %}
+        <span class="card-cta">
+          View publication
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7M7 7h10v10"/></svg>
+        </span>
+      </a>
       {% endfor %}
     </div>
   </div>

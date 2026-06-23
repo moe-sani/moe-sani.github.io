@@ -1,35 +1,45 @@
 ---
 layout: default
 title: Case Studies
-description: Business case studies on industrial edge AI, IoT architecture, and autonomous systems from Moe Sani.
+description: Business case studies on industrial edge AI, IoT architecture, and autonomous systems — what was at stake, what path was chosen, and how risk was reduced.
 permalink: /blog/
 ---
 
-<section class="section">
+<section class="page-hero">
   <div class="container">
-    <h1 class="section-title">Business Case Studies</h1>
-    <p class="section-lede">Decision-focused case studies on edge AI and IoT architecture — showing what was at stake, what path was chosen, and how risk was reduced.</p>
-    <div class="card-grid">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="/">Home</a><span>/</span><span>Case Studies</span>
+    </nav>
+    <span class="eyebrow">Case Studies</span>
+    <h1>Decisions, not just demos</h1>
+    <p>Decision-focused case studies on edge AI and IoT architecture — showing what was at stake, what path was chosen, and how risk was reduced.</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="container">
+    <div class="post-list">
       {% for post in site.posts %}
       {% assign thumb = post.image | default: '/moe.jpeg' %}
-      <article class="card post-card reveal">
+      <a class="card post-row reveal" href="{{ post.url }}">
         <div class="post-thumb">
-          <img src="{{ thumb }}" alt="{{ post.title }} thumbnail">
+          <img src="{{ thumb }}" alt="{{ post.title }} thumbnail" loading="lazy">
         </div>
         <div class="post-body">
-          <p class="post-meta">{{ post.date | date: "%b %d, %Y" }}</p>
+          <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
           <h3>{{ post.title }}</h3>
-          <p>{{ post.excerpt | strip_html | truncate: 180 }}</p>
+          <p>{{ post.excerpt | strip_html | truncate: 240 }}</p>
+          {% if post.tags.size > 0 %}
           <div class="tag-list">
-            {% for tag in post.tags %}
-            <span class="tag">{{ tag }}</span>
-            {% endfor %}
+            {% for tag in post.tags limit:4 %}<span class="tag">{{ tag }}</span>{% endfor %}
           </div>
-          <div style="margin-top: 16px;">
-            <a class="button button-secondary" href="{{ post.url }}">Read Case Study</a>
-          </div>
+          {% endif %}
+          <span class="card-cta">
+            Read case study
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+          </span>
         </div>
-      </article>
+      </a>
       {% endfor %}
     </div>
   </div>
