@@ -1,55 +1,119 @@
 - title: Mapping Surgeons Hand/Finger Movements to Surgical Tool Motion During Conventional Microsurgery Using Machine Learning
   type: Journal Article
-  venue: International Journal of Computer Assisted Radiology and Surgery
-  year: 2022
-  authors: Mohammad Fattahi Sani, et al.
-  link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:eQOLeE2rZwMC
-  tags: [Surgical Robotics, ML]
-
-- title: Automatic navigation and landing of an indoor AR drone quadrotor using ArUco marker and inertial sensors
-  type: Conference Paper
-  venue: International Conference on Robotics and Automation for Humanitarian Applications
-  year: 2016
-  authors: Mohammad Fattahi Sani, et al.
-  link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:9yKSN-GCB0IC
-  tags: [Drones, Navigation]
-
-- title: Experimental study of reinforcement learning in mobile robots through spiking architecture of Thalamo-Cortico-Thalamic circuitry of mammalian brain
-  type: Journal Article
-  venue: International Journal of Advanced Robotic Systems
-  year: 2016
-  authors: Mohammad Fattahi Sani, et al.
-  link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:IjCSPb-OGe4C
-  tags: [Reinforcement Learning, Robotics]
-
-- title: Towards finger motion tracking and analyses for cardiac surgery
-  type: Conference Paper
-  venue: International Conference on Computer Assisted Radiology and Surgery
+  venue: Journal of Medical Robotics Research
+  detail: Vol. 06, No. 03n04 · Open Access
   year: 2021
   authors: Mohammad Fattahi Sani, et al.
-  link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:u-x6o8ySG0sC
-  tags: [Surgical Robotics, Haptics]
+  image: /assets/images/publications/concept_ft.png
+  summary: >-
+    A pilot study that trains a deep neural network to map a surgeon's wrist, hand and
+    finger movements to microsurgical tool pose during mock cardiac micro-surgery. A
+    lightweight wearable with 12 joint-angle sensors estimates instrument orientation and
+    jaw angle with under 0.3% mean squared error — a step toward more intuitive teleoperation.
+  link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:eQOLeE2rZwMC
+  tags: [Surgical Robotics, Deep Learning, Teleoperation]
 
-- title: Unsupervised learning of target attraction for robots through spike timing dependent plasticity
-  type: Journal Article
-  venue: Neural Networks
-  year: 2018
+- title: Automatic Navigation and Landing of an Indoor AR.Drone Quadrotor Using ArUco Marker and Inertial Sensors
+  type: Conference Paper
+  venue: International Conference on Computer and Drone Applications (IConDA)
+  year: 2017
   authors: Mohammad Fattahi Sani, et al.
+  image: /assets/images/publications/automatic_navigation.png
+  summary: >-
+    A low-cost system for autonomous indoor navigation and landing of an AR.Drone 2.0 using
+    its front- and bottom-facing cameras with an ArUco marker. When vision is unavailable,
+    inertial measurements fused through a Kalman filter keep navigation reliable, landing
+    the drone accurately on a predefined point.
+  link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:9yKSN-GCB0IC
+  tags: [Drones, Visual Navigation, Sensor Fusion]
+
+- title: Towards Sound-Source Position Estimation Using Mutual Information for Next-Best-View Motion Planning
+  type: Conference Paper
+  venue: International Conference on Advanced Robotics (ICAR)
+  year: 2019
+  authors: Mohammad Fattahi Sani, et al.
+  image: /assets/images/publications/towards_sound_source.png
+  summary: >-
+    An active-perception method (NBV-SPE) for locating stationary sound sources with a
+    single motion-capable acoustic sensor. It combines an Extended Kalman Filter with mutual
+    information to choose the Next-Best-View pose, balancing movement cost and sensor
+    characteristics — demonstrated on a 6-DOF manipulator in indoor and outdoor 3D experiments.
+  link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:Y0pCki6q_DkC
+  tags: [Acoustic Sensing, Active Perception, Motion Planning]
+
+
+- title: Experimental Study of Reinforcement Learning in Mobile Robots Through Spiking Architecture of Thalamo-Cortico-Thalamic Circuitry of Mammalian Brain
+  type: Journal Article
+  venue: Robotica (Cambridge University Press)
+  year: 2019
+  authors: Mohammad Fattahi Sani, et al.
+  image: /assets/images/publications/spiking_nn.jpeg
+  summary: >-
+    A spiking neural network — modelled on the brain's thalamo-cortico-thalamic circuitry
+    with 1,090 Izhikevich neurons — learns robot behaviour via spike-timing-dependent
+    plasticity and dopamine-based reward. Validated on the Tabrizbot mobile robot, it cut
+    target-catching time by about 36% after learning.
+  link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:IjCSPb-OGe4C
+  tags: [Reinforcement Learning, Spiking Neural Networks, Neuromorphic]
+
+
+- title: Towards Finger Motion Tracking and Analyses for Cardiac Surgery
+  type: Conference Paper
+  venue: Mediterranean Conference on Medical and Biological Engineering and Computing (MEDICON)
+  detail: Springer · pp. 1515–1525
+  year: 2019
+  authors: Mohammad Fattahi Sani, et al.
+  image: /assets/images/publications/towards_finger.png
+  summary: >-
+    A custom, lightweight IMU finger-tracking system that leaves the surgeon's hands free
+    while capturing joint angles and fingertip positions of the thumb, index and middle
+    fingers during ex-vivo cardiac surgery. Validated against NDI Polaris optical tracking,
+    it analyses suturing and knotting with a Castroviejo instrument to inform a more
+    intuitive master console.
+  link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:u-x6o8ySG0sC
+  tags: [Surgical Robotics, Motion Capture, IMU Sensing]
+
+- title: Unsupervised Learning of Target Attraction for Robots Through Spike-Timing-Dependent Plasticity
+  type: Conference Paper
+  venue: IEEE International Conference on Knowledge-Based Engineering and Innovation (KBEI)
+  detail: pp. 428–433
+  year: 2017
+  authors: Mohammad Fattahi Sani, et al.
+  image: /assets/images/publications/Tabrizbot-and-its-functional-block-diagramc-Target-attraction-Experiment_Q320.png
+  summary: >-
+    An unsupervised spiking neural network (Izhikevich neurons) in which a robot learns
+    target attraction purely through spike-timing-dependent plasticity. Co-firing
+    sensory-to-motor pathways are strengthened while unused synapses decay — validated in
+    simulation on both a mobile robot and a one-DOF robotic arm.
   link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:d1gkVwhDpl0C
-  tags: [Neural Networks, Robotics]
+  tags: [Spiking Neural Networks, STDP, Unsupervised Learning]
+
+- title: "DGCNN on FPGA: Acceleration of the Point Cloud Classifier Using FPGAs"
+  type: Journal Article
+  venue: Circuits, Systems, and Signal Processing (Springer)
+  detail: Vol. 42, Issue 2 · pp. 748–779
+  year: 2023
+  authors: Mohammad Fattahi Sani, et al.
+  image: /assets/images/publications/The-overview-of-the-padding-and-unpadding-operations-invoked-on-host-device-data.png
+  summary: >-
+    An FPGA accelerator for the Dynamic Graph CNN (DGCNN) point-cloud classifier that keeps
+    the hardware isolated from the computational graph for reusability. Handling 18 tensor-
+    operation types, burst transfers and multiple processing elements, a single-bitstream
+    Float32 design delivers large speedups over a single-threaded CPU implementation.
+  link: https://link.springer.com/article/10.1007/s00034-022-02179-0
+  tags: [Edge AI, FPGA Acceleration, Point Clouds]
 
 - title: "Palm Reading: Using Palm Deformation for Fingers and Thumb Pose Estimation"
   type: Conference Paper
-  venue: IEEE International Conference on Robotics and Automation
-  year: 2023
-  authors: Mohammad Fattahi Sani, et al.
-  link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:Tyk-4Ss8FVUC
-  tags: [Computer Vision, HCI]
-
-- title: Towards Sound-source Position Estimation using Mutual Information for Next Best View Motion Planning
-  type: Conference Paper
-  venue: IEEE/RSJ International Conference on Intelligent Robots and Systems
-  year: 2020
-  authors: Mohammad Fattahi Sani, et al.
-  link: https://scholar.google.co.uk/citations?view_op=view_citation&hl=en&user=jP9cQ5IAAAAJ&citation_for_view=jP9cQ5IAAAAJ:Y0pCki6q_DkC
-  tags: [Sound Localization, Robotics]
+  venue: IEEE International Conference on Robotics and Biomimetics (ROBIO)
+  detail: pp. 2964–2970
+  year: 2019
+  authors: Mohammad Fattahi Sani, Mario Esteban Ochoa, Sanja Dogramadzi
+  image: /assets/images/publications/Proposed-Sensing-Network-left-IMU-sensors-on-the-palm.png
+  summary: >-
+    A hand-pose sensing approach that detects palm-arch deformation using palm-mounted IMU
+    sensors to estimate joint angles of the thumb, index and middle fingers. Using PCA and
+    dynamic neural networks (with NDI Polaris as ground truth), it estimates digit joint
+    angles with an average error under 4.1%.
+  link: https://ieeexplore.ieee.org/abstract/document/8961467/
+  tags: [Computer Vision, Pose Estimation, IMU Sensing]

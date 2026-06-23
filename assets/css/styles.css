@@ -599,11 +599,39 @@ a:focus-visible {
 .post-row .post-body h3 { font-size: clamp(1.3rem, 1vw + 1rem, 1.6rem); }
 .post-row .post-body p { font-size: 1rem; }
 
-/* Publication card */
-.pub-card { display: flex; flex-direction: column; }
-.pub-card .pub-venue { color: var(--primary); font-weight: 600; font-size: 0.9rem; margin-bottom: 8px; font-family: var(--font-display); }
-.pub-card h3 { font-size: 1.08rem; line-height: 1.3; margin-bottom: 10px; }
-.pub-card .pub-authors { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 14px; }
+/* Publication card (gallery grid) */
+.pub-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.pub-thumb {
+  aspect-ratio: 16 / 10;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  border-bottom: 1px solid var(--line);
+  overflow: hidden;
+}
+.pub-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 14px;
+  transition: transform 0.4s ease;
+}
+.pub-card:hover .pub-thumb img { transform: scale(1.03); }
+
+/* Placeholder thumb (no figure available) */
+.pub-thumb--placeholder {
+  background: linear-gradient(140deg, color-mix(in srgb, var(--brand-300) 22%, var(--surface)), var(--surface));
+  color: var(--primary);
+}
+.pub-thumb--placeholder svg { width: 46px; height: 46px; opacity: 0.7; }
+
+/* Publication body */
+.pub-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
+.pub-body .pub-venue { color: var(--primary); font-weight: 600; font-size: 0.82rem; margin-bottom: 8px; font-family: var(--font-display); letter-spacing: 0.02em; }
+.pub-body h3 { font-size: 1.08rem; line-height: 1.3; margin-bottom: 10px; }
+.pub-body .pub-summary { color: var(--text-soft); font-size: 0.92rem; margin-bottom: 14px; }
+.pub-body .pub-authors { font-size: 0.84rem; color: var(--text-muted); margin-bottom: 12px; }
+
 
 /* Card call-to-action (whole card is clickable) */
 .card-cta {
