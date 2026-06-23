@@ -25,12 +25,6 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
 
-collections:
-  projects:
-    output: true
-  publications:
-    output: false
-
 defaults:
   - scope:
       path: ""
