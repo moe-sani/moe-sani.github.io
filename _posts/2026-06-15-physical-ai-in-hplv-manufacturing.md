@@ -7,15 +7,7 @@ excerpt: "Applying robotics, automation, and AI to high-precision, low-volume ma
 image: /assets/images/posts/cover_infographic.png
 ---
 
-# Physical AI in High-Precision, Low-Volume Manufacturing
-
-**Applying Robotics, Automation, and AI to the World of Luxury Watchmaking, Jewelry, and Beyond**
-
-*Research Brief — June 2026*
-
----
-
-![Cover Infographic](/assets/images/posts/cover_infographic.png)
+**Applying robotics, automation, and AI to the world of luxury watchmaking, fine jewelry, and beyond.**
 
 ---
 

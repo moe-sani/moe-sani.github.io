@@ -89,7 +89,9 @@
             }
           });
         },
-        { threshold: 0.15, rootMargin: "0px 0px -40px 0px" }
+        // threshold 0 so elements taller than the viewport (e.g. long
+        // articles) still reveal; rootMargin triggers slightly into view.
+        { threshold: 0, rootMargin: "0px 0px -10% 0px" }
       );
       revealEls.forEach(function (el) { observer.observe(el); });
     } else {
