@@ -1,3 +1,12 @@
+---
+layout: post
+title: "Production-Grade, Fail-Safe OTA for a Multi-Processor IoT Appliance"
+date: 2026-09-08
+tags: [IoT, OTA Updates, Embedded Systems, Edge AI, Firmware, Cloud Architecture, DevOps]
+excerpt: "A practical blueprint for safely updating embedded Linux, MCU firmware, ML models, and cloud services across a large connected-appliance fleet."
+image: /assets/images/posts/cover_infographic.png
+---
+
 # Production-Grade, Fail-Safe OTA for a Multi-Processor IoT Appliance
 
 A complete blueprint for updating a fleet of connected appliances that contain an embedded
