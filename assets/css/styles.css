@@ -839,6 +839,17 @@ a.card:hover .card-cta { color: var(--primary-strong); }
 }
 .article-body pre code { background: none; padding: 0; }
 .article-body hr { border: none; border-top: 1px solid var(--line); margin-block: 2.4em; }
+.mermaid-figure {
+  margin-block: 2em;
+  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--r-md);
+  overflow-x: auto;
+  text-align: center;
+}
+.mermaid-figure .mermaid { display: block; }
+.mermaid-figure svg { max-width: 100%; height: auto; }
 .article-body table {
   width: 100%;
   border-collapse: collapse;

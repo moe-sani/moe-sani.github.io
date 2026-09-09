@@ -102,5 +102,61 @@
     var yearEls = document.querySelectorAll("[data-year]");
     var year = new Date().getFullYear();
     yearEls.forEach(function (el) { el.textContent = year; });
+
+    /* ---------- Mermaid diagrams ---------- */
+    var mermaidBlocks = Array.prototype.slice.call(
+      document.querySelectorAll("code.language-mermaid, pre.language-mermaid, div.language-mermaid")
+    );
+    if (!mermaidBlocks.length) return;
+
+    import("https://cdn.jsdelivr.net/npm/mermaid@11.4.1/dist/mermaid.esm.min.mjs")
+      .then(function (mod) {
+        var mermaid = mod.default;
+        var diagrams = [];
+
+        mermaidBlocks.forEach(function (node) {
+          var codeEl = node.tagName === "CODE" ? node : node.querySelector("code") || node;
+          var source = codeEl.textContent;
+          /* Replace the whole highlighted block, not just the <code> element. */
+          var block = node.closest(".highlighter-rouge") || node.closest("pre") || node;
+          var figure = document.createElement("figure");
+          figure.className = "mermaid-figure";
+          var holder = document.createElement("div");
+          holder.className = "mermaid";
+          holder.textContent = source;
+          figure.appendChild(holder);
+          block.parentNode.replaceChild(figure, block);
+          diagrams.push({ el: holder, source: source });
+        });
+
+        function renderAll() {
+          mermaid.initialize({
+            startOnLoad: false,
+            securityLevel: "strict",
+            theme: root.getAttribute("data-theme") === "dark" ? "dark" : "default",
+            themeVariables: { fontFamily: "Inter, system-ui, sans-serif", fontSize: "15px" },
+            flowchart: { useMaxWidth: true, htmlLabels: true },
+            sequence: { useMaxWidth: true },
+            state: { useMaxWidth: true }
+          });
+          diagrams.forEach(function (d) {
+            d.el.removeAttribute("data-processed");
+            d.el.textContent = d.source;
+          });
+          mermaid.run({ nodes: diagrams.map(function (d) { return d.el; }) });
+        }
+
+        renderAll();
+
+        if ("MutationObserver" in window) {
+          new MutationObserver(renderAll).observe(root, {
+            attributes: true,
+            attributeFilter: ["data-theme"]
+          });
+        }
+      })
+      .catch(function () {
+        /* Mermaid unavailable: the original code blocks stay on the page. */
+      });
   });
 })();
