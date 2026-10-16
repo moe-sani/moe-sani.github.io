@@ -21,7 +21,7 @@ layout: default
     </header>
 
     {% if page.image %}
-    <figure class="article-cover reveal">
+    <figure class="article-cover reveal{% if page.image_fit == 'contain' %} article-cover--contain{% endif %}">
       <img src="{{ page.image }}" alt="{{ page.title }} cover image">
     </figure>
     {% endif %}

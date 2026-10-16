@@ -22,7 +22,7 @@ permalink: /blog/
       {% for post in site.posts %}
       {% assign thumb = post.image | default: '/moe.jpeg' %}
       <a class="card post-row reveal" href="{{ post.url }}">
-        <div class="post-thumb">
+        <div class="post-thumb{% if post.image_fit == 'contain' %} post-thumb--contain{% endif %}">
           <img src="{{ thumb }}" alt="{{ post.title }} thumbnail" loading="lazy">
         </div>
         <div class="post-body">

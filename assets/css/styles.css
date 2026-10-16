@@ -580,6 +580,7 @@ a:focus-visible {
 .post-card { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
 .post-thumb { aspect-ratio: 16 / 9; overflow: hidden; background: var(--bg-alt); }
 .post-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.4s ease; }
+.post-thumb--contain img { object-fit: contain; padding: 12px; background: #fff; }
 .post-card:hover .post-thumb img { transform: scale(1.04); }
 .post-body { padding: 24px; display: flex; flex-direction: column; flex: 1; }
 .post-body h3 { font-size: 1.2rem; margin-bottom: 10px; }
@@ -874,6 +875,8 @@ a.card:hover .card-cta { color: var(--primary-strong); }
   margin-bottom: clamp(28px, 4vw, 48px);
 }
 .article-cover img { width: 100%; aspect-ratio: 21 / 9; object-fit: cover; }
+.article-cover--contain { background: #fff; }
+.article-cover--contain img { object-fit: contain; padding: clamp(10px, 2vw, 20px); }
 .article-meta { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; color: var(--text-muted); font-size: 0.9rem; }
 .article-meta .dot { width: 4px; height: 4px; border-radius: 50%; background: var(--text-muted); }
 

@@ -99,7 +99,7 @@ description: Moe Sani architects scalable edge AI, IoT, and autonomous systems f
       {% for post in site.posts limit:3 %}
       {% assign thumb = post.image | default: '/moe.jpeg' %}
       <a class="card post-card reveal" href="{{ post.url }}" data-delay="{{ forloop.index0 }}">
-        <div class="post-thumb">
+        <div class="post-thumb{% if post.image_fit == 'contain' %} post-thumb--contain{% endif %}">
           <img src="{{ thumb }}" alt="{{ post.title }} thumbnail" loading="lazy">
         </div>
         <div class="post-body">
