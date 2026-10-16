@@ -41,6 +41,8 @@ image: /assets/images/posts/cover.png
 ---
 ```
 
+Alternatively, drop a draft and its supporting media into `new_post/`. When the post is prepared, the formatted article is moved to `_posts/`, its media is moved to a dated folder under `assets/images/posts/`, and `new_post/` is cleared for the next draft.
+
 ## Editing data
 
 - **Publications** → `_data/publications.yml`
