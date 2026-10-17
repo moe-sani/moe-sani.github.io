@@ -854,21 +854,27 @@ a.card:hover .card-cta { color: var(--primary-strong); }
   max-width: 650px;
 }
 .newsletter-points li {
-  display: flex;
-  align-items: flex-start;
-  gap: 11px;
+  position: relative;
+  min-height: 22px;
+  padding-left: 34px;
   color: var(--text);
   font-weight: 500;
 }
-.newsletter-points svg {
-  flex: 0 0 22px;
+.newsletter-points li::before {
+  content: "\2713";
+  position: absolute;
+  top: 1px;
+  left: 0;
+  display: grid;
+  place-items: center;
   width: 22px;
   height: 22px;
-  margin-top: 1px;
-  padding: 4px;
   border-radius: 50%;
   background: color-mix(in srgb, var(--brand-300) 25%, transparent);
   color: var(--primary);
+  font-size: 12px;
+  font-weight: 800;
+  line-height: 1;
 }
 .newsletter-signup-card {
   position: relative;
