@@ -1,114 +1,26 @@
 ---
 layout: default
 title: Moe Sani Tech Newsletter
-description: Practical notes on edge AI, robotics, IoT, and the engineering decisions that turn ambitious technology into reliable products.
+description: A short, practical newsletter on edge AI, robotics, and IoT.
 permalink: /newsletter/
 ---
 
 <section class="newsletter-hero">
-  <div class="container newsletter-grid">
-    <div class="newsletter-copy reveal">
-      <nav class="breadcrumbs" aria-label="Breadcrumb">
-        <a href="/">Home</a><span>/</span><span>Newsletter</span>
-      </nav>
-      <span class="eyebrow">Practical technology insight</span>
-      <h1>Moe Sani <span class="grad">Tech Newsletter</span></h1>
-      <p class="newsletter-lede">Clear, useful notes on edge AI, robotics, IoT, and building intelligent systems that keep working after the demo.</p>
-
-      <ul class="newsletter-points" role="list">
-        <li>Engineering lessons from real-world systems</li>
-        <li>Honest analysis without the AI hype</li>
-        <li>Ideas you can apply to products and technical strategy</li>
-      </ul>
-    </div>
+  <div class="container newsletter-shell">
+    <header class="newsletter-intro reveal">
+      <span class="eyebrow">Moe Sani Tech Newsletter</span>
+      <h1>Practical ideas.<br><span class="grad">No hype.</span></h1>
+      <p class="newsletter-lede">A short newsletter on edge AI, robotics, and IoT.</p>
+    </header>
 
     <aside id="subscribe" class="newsletter-signup-card reveal" data-delay="1" aria-labelledby="subscribe-title">
-      <span class="newsletter-card-label">Free newsletter</span>
-      <h2 id="subscribe-title">Useful signal for people building at the edge</h2>
-      <p>Join me for considered, practitioner-led writing on the technologies and decisions shaping intelligent products.</p>
+      <h2 id="subscribe-title">Get the next issue</h2>
+      <p>Free and occasional.</p>
       <div class="newsletter-form-shell">
         <script async data-uid="1dbfd88cc4" src="https://moe-sani.kit.com/1dbfd88cc4/index.js"></script>
         <noscript><a class="button button-primary" href="https://moe-sani.kit.com/1dbfd88cc4">Subscribe on Kit</a></noscript>
       </div>
-      <p class="newsletter-privacy">No inbox filler. Unsubscribe whenever you like.</p>
+      <p class="newsletter-privacy">Unsubscribe anytime.</p>
     </aside>
-  </div>
-</section>
-
-<section class="section">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">What to expect</span>
-      <h2 class="section-title">The engineering behind intelligent products</h2>
-      <p class="section-lede">A practical view of what it takes to move from an interesting prototype to a system that performs reliably in the real world.</p>
-    </div>
-
-    <div class="card-grid newsletter-topic-grid">
-      <article class="card service-card newsletter-topic reveal">
-        <span class="service-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M9 9h6v6H9zM9 2v2M15 2v2M9 20v2M15 20v2M2 9h2M2 15h2M20 9h2M20 15h2"/></svg>
-        </span>
-        <h3>Edge AI in production</h3>
-        <p>Model and hardware choices, deployment patterns, performance constraints, and the operational details that separate a demo from a dependable product.</p>
-      </article>
-
-      <article class="card service-card newsletter-topic reveal" data-delay="1">
-        <span class="service-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3h8l1 4h3v10h-3l-1 4H8l-1-4H4V7h3l1-4z"/><circle cx="12" cy="12" r="3"/></svg>
-        </span>
-        <h3>Robotics and physical AI</h3>
-        <p>How perception, planning, control, and safety come together when AI leaves the screen and has to operate in a messy physical world.</p>
-      </article>
-
-      <article class="card service-card newsletter-topic reveal" data-delay="2">
-        <span class="service-ico">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 17h16M7 4v16M17 4v16"/><circle cx="7" cy="7" r="2"/><circle cx="17" cy="17" r="2"/></svg>
-        </span>
-        <h3>Systems that scale</h3>
-        <p>IoT architecture, fleet management, observability, secure updates, and the technical decisions that either reduce future risk or quietly create it.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="section section--alt">
-  <div class="container">
-    <div class="section-head reveal">
-      <span class="eyebrow">Read before you subscribe</span>
-      <h2 class="section-title">A sample of the thinking</h2>
-      <p class="section-lede">Recent case studies and field notes on edge intelligence, autonomous systems, and production architecture.</p>
-    </div>
-
-    <div class="card-grid">
-      {% for post in site.posts limit:3 %}
-      {% assign thumb = post.image | default: '/moe.jpeg' %}
-      <a class="card post-card reveal" href="{{ post.url }}" data-delay="{{ forloop.index0 }}">
-        <div class="post-thumb{% if post.image_fit == 'contain' %} post-thumb--contain{% endif %}">
-          <img src="{{ thumb }}" alt="{{ post.title }} thumbnail" loading="lazy">
-        </div>
-        <div class="post-body">
-          <p class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</p>
-          <h3>{{ post.title }}</h3>
-          <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
-          <span class="card-cta">
-            Read article
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-          </span>
-        </div>
-      </a>
-      {% endfor %}
-    </div>
-  </div>
-</section>
-
-<section class="section section--tight">
-  <div class="container">
-    <div class="cta-band reveal">
-      <div>
-        <h2>Ready for the next issue?</h2>
-        <p>Join the Moe Sani Tech Newsletter for practical ideas you can put to work.</p>
-      </div>
-      <a class="button button-primary" href="#subscribe">Subscribe free</a>
-    </div>
   </div>
 </section>
